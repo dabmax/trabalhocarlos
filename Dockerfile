@@ -28,11 +28,9 @@ ENV LC_ALL pt_BR.UTF-8
 #     tzdata
 
 # RUN adduser noob -D
-ARG user=teste
-ARG home=/home/$user
-RUN useradd --create-home -s /bin/bash $user \
+RUN useradd --create-home -s /bin/bash teste \
         && echo $user:ubuntu | chpasswd
-WORKDIR $home
+WORKDIR /home/$user
 USER $user
 # WORKDIR /home/ubuntu
 # ENV TZ=America/Fortaleza 
