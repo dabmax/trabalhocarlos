@@ -1,19 +1,10 @@
-FROM alpine:3.20
+FROM ubuntu:22.04
 
-RUN apk update && \
-    apk add --no-cache \
-    bash \
-    curl \
-    vim \
-    openssl \
-    git \
-    tzdata
+RUN apt-get update && \
+    apt-get install -yq tzdata && \
+    ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
+    dpkg-reconfigure -f noninteractive tzdata
 
-RUN adduser noob -D
-USER noob
-ENV TZ=America/Fortaleza
+ENV TZ="America/Fortaleza"
 
-EXPOSE 80 443
-
-
-CMD ["sh"]
+CMD ["bash"]
