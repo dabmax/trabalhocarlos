@@ -13,10 +13,10 @@ RUN apt-get update \
     && locale-gen \
     && ln -fs /usr/share/zoneinfo/America/Fortaleza /etc/localtime \
     && dpkg-reconfigure tzdata 
-RUN 
-ENV LANG pt_BR.UTF-8  
-ENV LANGUAGE pt_BR:pt
-ENV LC_ALL pt_BR.UTF-8
+# RUN 
+# ENV LANG pt_BR.UTF-8  
+# ENV LANGUAGE pt_BR:pt
+# ENV LC_ALL pt_BR.UTF-8
 
 # RUN apk update && \
 #     apk add --no-cache \
