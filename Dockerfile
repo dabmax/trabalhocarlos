@@ -29,7 +29,7 @@ ENV LC_ALL pt_BR.UTF-8
 
 # RUN adduser noob -D
 RUN useradd --create-home -s /bin/bash teste \
-        && echo $user:ubuntu | chpasswd
+        && echo teste:ubuntu | chpasswd
 WORKDIR /home/$user
 USER $user
 # WORKDIR /home/ubuntu
