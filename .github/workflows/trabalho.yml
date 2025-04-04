@@ -21,7 +21,7 @@ jobs:
       - name: Scan Dockle (CIS Benchmark)
         uses: goodwithtech/dockle-action@v1
         with:
-          image: '${{ secrets.DOCKER_USERNAME }}/trabalhodefesa:${{ github.sha }}'
+          image: '${{ secrets.DOCKER_USERNAME }}/trabalhocarlos:${{ github.sha }}'
           format: 'list'
           exit-code: '1'
           exit-level: 'fatal'
