@@ -1,10 +1,18 @@
-FROM ubuntu:22.04
+FROM alpine:3.20
 
-RUN apt-get update && \
-    apt-get install -yq tzdata && \
-    ln -fs /usr/share/zoneinfo/America/Fortaleza /etc/localtime && \
-    dpkg-reconfigure -f noninteractive tzdata
+RUN apk update && \
+    apk add --no-cache \
+    bash \
+    curl \
+    vim \
+    openssl \
+    git \
+    tzdata
 
-ENV TZ="America/Fortaleza"
+RUN adduser noob -D
+USER noob
+ENV TZ=America/Fortaleza 
+ 
+CMD ["sh"]
 
-CMD ["bash"]
+
