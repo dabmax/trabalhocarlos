@@ -19,7 +19,7 @@ jobs:
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/trabalhocarlos:${{ github.sha }} .
 
       - name: Scan Dockle (CIS Benchmark)
-        uses: goodwithtech/dockle-action@v1
+        uses: goodwithtech/dockle-action@v0.4.15
         with:
           image: '${{ secrets.DOCKER_USERNAME }}/trabalhocarlos:${{ github.sha }}'
           format: 'list'
