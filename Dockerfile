@@ -13,7 +13,7 @@ RUN apt-get update \
     && locale-gen \
     && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
     && dpkg-reconfigure tzdata 
-
+RUN 
 ENV LANG pt_BR.UTF-8  
 ENV LANGUAGE pt_BR:pt
 ENV LC_ALL pt_BR.UTF-8
@@ -31,9 +31,7 @@ ENV LC_ALL pt_BR.UTF-8
 ARG user=teste
 ARG home=/home/$user
 RUN useradd --create-home -s /bin/bash $user \
-        && echo $user:ubuntu | chpasswd \
-        && adduser $user sudo
-
+        && echo $user:ubuntu | chpasswd
 WORKDIR $home
 USER $user
 # WORKDIR /home/ubuntu
