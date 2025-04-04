@@ -19,13 +19,14 @@ jobs:
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/trabalhocarlos:${{ github.sha }} .
 
       - name: Scan Dockle (CIS Benchmark)
-        uses: goodwithtech/dockle-action@v0.4.15
+        uses: goodwithtech/dockle-action@v1
         with:
-          image: '${{ secrets.DOCKER_USERNAME }}/trabalhocarlos:${{ github.sha }}'
+          image: '${{ secrets.DOCKER_USERNAME }}/trabalhodefesa:${{ github.sha }}'
           format: 'list'
           exit-code: '1'
           exit-level: 'fatal'
           accept-key: 'org.opencontainers.image.version,org.opencontainers.image.ref.name,TZ'
+
 
       - name: Scan Trivy (vulnerabilidades e segredos)
         uses: aquasecurity/trivy-action@0.30.0
