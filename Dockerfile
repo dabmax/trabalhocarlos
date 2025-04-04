@@ -27,8 +27,10 @@ ENV LC_ALL pt_BR.UTF-8
 #     git \
 #     tzdata
 
-RUN adduser noob -D
-USER noob
+# RUN adduser noob -D
+RUN useradd -rm -d /home/ubuntu -s /bin/bash
+USER ubuntu
+WORKDIR /home/ubuntu
 # ENV TZ=America/Fortaleza 
  
 # CMD ["sh"]
