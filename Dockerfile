@@ -28,7 +28,7 @@ ENV LC_ALL pt_BR.UTF-8
 #     tzdata
 
 # RUN adduser noob -D
-RUN useradd -rm -d /home/ubuntu -s /bin/bash
+RUN addgroup demo && adduser -DH -G demo demo
 USER ubuntu
 WORKDIR /home/ubuntu
 # ENV TZ=America/Fortaleza 
