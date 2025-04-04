@@ -29,8 +29,8 @@ ENV LC_ALL pt_BR.UTF-8
 
 # RUN adduser noob -D
 RUN addgroup demo && adduser -DH -G demo demo
-USER ubuntu
-WORKDIR /home/ubuntu
+USER demo
+# WORKDIR /home/ubuntu
 # ENV TZ=America/Fortaleza 
  
 # CMD ["sh"]
