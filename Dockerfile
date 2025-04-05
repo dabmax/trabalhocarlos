@@ -1,7 +1,7 @@
 # FROM alpine:3.20
 
 # FROM ubuntu:22.04
-FROM ubuntu:jammy
+FROM ubuntu:20.04
 
 # ARG DEBIAN_FRONTEND=noninteractive
 
